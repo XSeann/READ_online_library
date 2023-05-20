@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from "react"
 import { useParams } from "react-router-dom"
-import {Document, Page} from 'react-pdf'
+import {Document, Page, pdfjs} from 'react-pdf'
 import 'react-pdf/dist/esm/Page/TextLayer.css'
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css'
+
+pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.js';
 
 
 const PdfView = () => {
