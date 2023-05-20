@@ -8,5 +8,16 @@
     "mongoose": "^7.1.2",
     "nodemailer": "^6.9.2",
     "validator": "^13.9.0"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
