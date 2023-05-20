@@ -118,7 +118,7 @@ const Signup = () => {
             sndEmail()
             setTrig(0)
         } 
-    }, [send])
+    }, [send, bckImg, email, frontImg, password, trig])
 
     const frImg = {
         backgroundImage : `url(${frontImg})`,
@@ -182,7 +182,7 @@ const Signup = () => {
                     <label>ID (Front): </label>
                     <input 
                     type='file' 
-                    className={`${(error && frontImg === '' || errorImg) && 'error'}`}
+                    className={`${((error && frontImg === '') || errorImg) && 'error'}`}
                     onChange={handle}
                     disabled={isLoading}
                     accept="image/*"/><br/>
@@ -190,16 +190,16 @@ const Signup = () => {
                     <label>ID (Back): </label>
                     <input 
                     type='file'
-                    className={`${(error && bckImg === '' || errorImg2) && 'error'}`}
+                    className={`${((error && bckImg === '') || errorImg2) && 'error'}`}
                     onChange={handle2}
                     disabled={isLoading}
                     accept="image/*"/><br/>
                     {errorImg2 && <div className={`${errorImg2 && 'error'}`}>{errorImg2}</div>}
                     {isLoading === false && <button className="btnForm" onClick={() => setSend((e) => e + 1)}>Submit</button>}
                     {isLoading && <div className="loadingForm"><span></span></div>}
-                    {((error === 'Account is already existing' || error === 'User is not yet approved by the admin' 
-                    || error === 'Account is already pending') && (email === '' || password === '' || frontImg === '' || bckImg === '') || (error)
-                    && isLoading === false) 
+                    {(((error === 'Account is already existing' || error === 'User is not yet approved by the admin' 
+                    || error === 'Account is already pending') && (email === '' || password === '' || frontImg === '' || bckImg === '')) || (error
+                    && isLoading === false)) 
                     && <div className="error">{error}</div>}
                 </form>
                 <div style={bcImg}><div style={bcImgDes}>Back</div>{bckImg === '' && <div>No Back ID</div>}</div>

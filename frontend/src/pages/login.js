@@ -48,7 +48,7 @@ const Login = () => {
                     <div className="passTog"><input type="checkbox" disabled={isLoading} onChange={showPass}/> Show Password</div><br/>
                     {(isLoading === null || isLoading === false) && <button className="btnForm">Log In</button>}
                     {isLoading && <div className="loadingForm"><span></span></div>}
-                    {(error === 'All fields must be filled' && (email === '' || password === '') || error) && <div className="error">{error}</div>}
+                    {((error === 'All fields must be filled' && (email === '' || password === '')) || error) && <div className="error">{error}</div>}
                 </form>
             </div>
         </div>

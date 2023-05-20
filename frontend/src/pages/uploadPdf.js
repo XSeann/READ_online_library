@@ -178,7 +178,7 @@ const UploadPdf = () => {
 
                     <label>File of Thesis:</label>
                     <input 
-                    className={(error.includes('file') && file === '' || errorPdf) ? 'error' : ''}
+                    className={((error.includes('file') && file === '') || errorPdf) ? 'error' : ''}
                     type='file'
                     accept='.pdf'
                     disabled={isLoading}
