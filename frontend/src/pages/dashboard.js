@@ -110,7 +110,7 @@ const Dashboard = () => {
             deleteSignUpReq()
         }
         
-    }, [delIdCh, delId])
+    }, [delIdCh])
 
     useEffect(() => {
         
@@ -138,7 +138,7 @@ const Dashboard = () => {
             setUpPdf('')
         }
 
-    }, [upPdfCh, upPdf])
+    }, [upPdfCh])
 
     useEffect(() => {
         const deletePdf = async () => {
@@ -161,7 +161,7 @@ const Dashboard = () => {
             deletePdf()
             setDelPdf('')
         }
-    }, [delPdfCh, delPdf])
+    }, [delPdfCh])
 
     return(
         <div id="dashboardCon">
