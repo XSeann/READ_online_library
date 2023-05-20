@@ -118,7 +118,7 @@ const Signup = () => {
             sndEmail()
             setTrig(0)
         } 
-    }, [send, bckImg, email, frontImg, password, trig])
+    }, [send])
 
     const frImg = {
         backgroundImage : `url(${frontImg})`,
