@@ -13,7 +13,7 @@ const PdfView = () => {
 
     useEffect(() => {
         const getOneData = async () => {
-            const response = await fetch(`http://localhost:7000/api/file/${id.id}`)
+            const response = await fetch(`https://read-online-library.onrender.com/api/file/${id.id}`)
             const json = await response.json()
             setOneFile(json)
         }
@@ -73,7 +73,7 @@ const PdfView = () => {
             </div>
             {oneFile !== '' && <div id="refCita">
                 <p><strong>Reference:</strong> {oneFile.authors.split(',').length < 3 ? oneFile.authors.replace(',', ' & ') : 
-                oneFile.authors.split(',')[0] + ' et.al'} ({oneFile.createdAt.split('-')[0]}). {oneFile.title}. https://localhost:3000/pdfView/{oneFile._id}</p>
+                oneFile.authors.split(',')[0] + ' et.al'} ({oneFile.createdAt.split('-')[0]}). {oneFile.title}. {oneFile._id}</p>
                 <p><strong>Narrative Citation:</strong> {oneFile.authors.split(',').length < 3 ? oneFile.authors.replace(',', ' & ') : 
                 oneFile.authors.split(',')[0] + ' et.al'} ({oneFile.createdAt.split('-')[0]})</p>
                 <p><strong>Parenthetical Citation:</strong> ({oneFile.authors.split(',').length < 3 ? oneFile.authors.replace(',', ' & ') : 

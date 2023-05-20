@@ -55,7 +55,7 @@ const UploadPdf = () => {
     const uploadFile = async (e) => {
         e.preventDefault()
         setIsLoading(true)
-        const response = await fetch('http://localhost:7000/api/file', {
+        const response = await fetch('https://read-online-library.onrender.com/api/file', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({title, authors, section, pdf: file})

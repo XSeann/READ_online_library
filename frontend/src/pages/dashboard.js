@@ -18,7 +18,7 @@ const Dashboard = () => {
 
     useEffect(() => {
         const getUsers = async () => {
-            const response = await fetch('http://localhost:7000/api/user/users')
+            const response = await fetch('https://read-online-library.onrender.com/api/user/users')
             const json = await response.json()
     
             setAllUsers(json)
@@ -31,7 +31,7 @@ const Dashboard = () => {
 
     useEffect(() => {
         const getPdf = async () => {
-            const response = await fetch('http://localhost:7000/api/file')
+            const response = await fetch('https://read-online-library.onrender.com/api/file')
             const json = await response.json()
             setAllPdf(json)
             setStatePdf('')
@@ -56,7 +56,7 @@ const Dashboard = () => {
             const image2 = ''
             const message = 'Your Account has been approved. Thank you for your patience' 
 
-            const response = await fetch(`http://localhost:7000/api/user/${upIdCh}`,{
+            const response = await fetch(`https://read-online-library.onrender.com/api/user/${upIdCh}`,{
                 method: 'PATCH',
                 body: JSON.stringify({approved, image, image2}),
                 headers: {'Content-Type': 'application/json'}
@@ -72,7 +72,7 @@ const Dashboard = () => {
                 console.log('error')
             }
 
-            const sendEmail = await fetch('http://localhost:7000/api/user/sendEmail', {
+            const sendEmail = await fetch('https://read-online-library.onrender.com/api/user/sendEmail', {
                 method: 'POST',
                 body: JSON.stringify({email, message}),
                 headers: {'Content-Type': 'application/json'} 
@@ -92,7 +92,7 @@ const Dashboard = () => {
     useEffect(() => {
         
         const deleteSignUpReq = async () => {
-            const response = await fetch(`http://localhost:7000/api/user/${delIdCh}`, {
+            const response = await fetch(`https://read-online-library.onrender.com/api/user/${delIdCh}`, {
                 method: 'DELETE'
             })
     
@@ -117,7 +117,7 @@ const Dashboard = () => {
         
         const approved = true
         const ApprovePdf = async () => {
-            const response = await fetch(`http://localhost:7000/api/file/${upPdfCh}`,{
+            const response = await fetch(`https://read-online-library.onrender.com/api/file/${upPdfCh}`,{
                 method: 'PATCH',
                 body: JSON.stringify({approved}),
                 headers: {'Content-Type': 'application/json'}
@@ -143,7 +143,7 @@ const Dashboard = () => {
 
     useEffect(() => {
         const deletePdf = async () => {
-            const response = await fetch(`http://localhost:7000/api/file/${delPdfCh}`, {
+            const response = await fetch(`https://read-online-library.onrender.com/api/file/${delPdfCh}`, {
                 method: 'DELETE'
             })
             

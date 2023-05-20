@@ -74,7 +74,7 @@ const Signup = () => {
     useEffect(() => {
         const signUpReqSend = async () => {
             setIsLoading(true)
-            const response = await fetch('http://localhost:7000/api/user/signup', {
+            const response = await fetch('https://read-online-library.onrender.com/api/user/signup', {
                 method: 'POST',
                 body: JSON.stringify({email, password, base1: frontImg, base2: bckImg}),
                 headers: {'Content-Type': 'application/json'} 
@@ -99,7 +99,7 @@ const Signup = () => {
 
         const sndEmail = async () => {
             const message = 'Wait for atleast an hour before your account is approved. Thank you' 
-            const sendEmail = await fetch('http://localhost:7000/api/user/sendEmail', {
+            const sendEmail = await fetch('https://read-online-library.onrender.com/api/user/sendEmail', {
                 method: 'POST',
                 body: JSON.stringify({email, message}),
                 headers: {'Content-Type': 'application/json'} 
