@@ -20,7 +20,7 @@ const PdfView = () => {
             setOneFile(json)
         }
         getOneData()
-    }, [])
+    }, [id.id])
     
     function onDocumentLoadSuccess({ numPages }) {
         setNumPages(numPages)
@@ -68,7 +68,7 @@ const PdfView = () => {
                 </button>
             </div>
             
-            <div class="docuOnePdf" style={pdfStyle}>
+            <div className="docuOnePdf" style={pdfStyle}>
                 <Document file={oneFile.file} onLoadSuccess={onDocumentLoadSuccess}>
                     <Page pageNumber={pageNumber}/>
                 </Document>

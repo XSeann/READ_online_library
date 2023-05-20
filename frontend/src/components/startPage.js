@@ -2,16 +2,11 @@ import { useEffect, useState } from "react"
 
 const StartPage = () => {
     const [x, setX] = useState(0)
-    const [num, setNum] = useState(0)
 
     useEffect(() => {
         setTimeout(() => { 
             setX(e => e + 1)
         }, 7000) 
-
-        if(x > 0) {
-            setNum(100 * (x - 1))
-        }
 
         if(x > 4) {
             setX(0)

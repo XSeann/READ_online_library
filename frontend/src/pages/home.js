@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react"
 import escapeStringRegexp from 'escape-string-regexp';
 import { Link } from "react-router-dom"
-import {Document, Page} from 'react-pdf'
+//import {Document, Page} from 'react-pdf'
 
 const Home = () => {
     const [page, setPage] = useState(0)
@@ -244,14 +244,14 @@ const Home = () => {
     const bgSpan = {backgroundColor: '#1184c2'}
     const bgSpanNone = {}
     const formSt = {gridTemplateColumns: `${((searchData.length > 0 && pdfArr[0].length !== 0) || (searchData.length > 0 && pdfArr[0].length === 0)) ? '49% 49%' : '98%'}`}
-console.log(searchData.length)
+
     return(
         <div id="home">
             <div id="pdfLinks">
                 <div id="pagination">
                     <button id="prev" onClick={() => {page > 0 && setPage(e => e - 1)}}>Prev</button>
                     <span>{page}</span>
-                    <button id="next" onClick={() => { (page < searchData.length - 1) || (page < pdfArr.length - 1 && searchData.length === 0) && setPage(e => e + 1)}}>Next</button>
+                    <button id="next" onClick={() => { ((page < searchData.length - 1) || (page < pdfArr.length - 1 && searchData.length === 0)) && setPage(e => e + 1)}}>Next</button>
                 </div>
                 {(pdfArr[0].length === 0 && searchData.length === 0)  && <div className="loading">
                     <div></div>

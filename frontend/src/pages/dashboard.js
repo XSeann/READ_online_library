@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import {Document, Page} from 'react-pdf'
 
 const Dashboard = () => {
     const [allUSers, setAllUsers] = useState([])
@@ -87,7 +86,7 @@ const Dashboard = () => {
             approveSignUpReq()
         }
         
-    }, [upIdCh])
+    }, [upIdCh, upId, allUSers])
 
     useEffect(() => {
         
@@ -111,7 +110,7 @@ const Dashboard = () => {
             deleteSignUpReq()
         }
         
-    }, [delIdCh])
+    }, [delIdCh, delId])
 
     useEffect(() => {
         
@@ -139,7 +138,7 @@ const Dashboard = () => {
             setUpPdf('')
         }
 
-    }, [upPdfCh])
+    }, [upPdfCh, upPdf])
 
     useEffect(() => {
         const deletePdf = async () => {
@@ -162,7 +161,7 @@ const Dashboard = () => {
             deletePdf()
             setDelPdf('')
         }
-    }, [delPdfCh])
+    }, [delPdfCh, delPdf])
 
     return(
         <div id="dashboardCon">
@@ -180,9 +179,9 @@ const Dashboard = () => {
                     <p>Email: {data.email}</p>
                     <div id="IDConfirm">
                         <p>ID (Front): </p>
-                        <img src={data.image} width={100}/> 
+                        <img src={data.image} width={100} alt=""/> 
                         <p>ID (Back): </p>
-                        <img src={data.image2} width={100}/>
+                        <img src={data.image2} width={100} alt=""/>
                     </div>
                     {(delId !== data._id && upId !== data._id) && <div className="dashBMainButtons">
                         <button className="appr" onClick={e => setUpId(e.target.value)} value={data._id}>Approve Request</button>
