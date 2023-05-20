@@ -86,7 +86,7 @@ const Dashboard = () => {
             approveSignUpReq()
         }
         
-    }, [upIdCh, upId, allUSers])
+    }, [upIdCh])
 
     useEffect(() => {
         
