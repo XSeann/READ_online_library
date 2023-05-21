@@ -170,6 +170,7 @@ const Signup = () => {
                     className={`${(error && email === '') && 'error'}`}
                     onChange={(e) => setEmail(e.target.value)}
                     disabled={isLoading}
+                    placeholder="@gmail.com"
                     value={email}/><br/>
                     <label>Password: </label>
                     <input 
@@ -177,6 +178,7 @@ const Signup = () => {
                     className={`${(error && password === '') && 'error'}`}
                     onChange={(e) => setPassword(e.target.value)}
                     disabled={isLoading}
+                    placeholder="password"
                     value={password}/><br/>
                     <div className="passTog"><input type="checkbox" disabled={isLoading} onChange={showPass}/> Show Password</div><br/>
                     <label>ID (Front): </label>
